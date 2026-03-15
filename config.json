@@ -1,42 +1,10 @@
 {
-  "log": {
-    "loglevel": "warning"
-  },
-
-  "inbounds": [
-    {
-      "tag": "vless-ws",
-      "listen": "0.0.0.0",
-      "port": 8080,
-      "protocol": "vless",
-
-      "settings": {
-        "clients": [
-          {
-            "id": "b8d4c1c7-5b7e-4a8f-9d0b-1f3e8c5a7d22"
-          }
-        ],
-        "decryption": "none"
-      },
-
-      "streamSettings": {
-        "network": "ws",
-        "security": "none",
-
-        "wsSettings": {
-          "path": "/proxy",
-          "headers": {
-            "Host": "www.speedtest.net"
-          }
-        }
-      }
-    }
-  ],
-
-  "outbounds": [
-    {
-      "protocol": "freedom",
-      "tag": "direct"
-    }
-  ]
+  "protocol": "vless",
+  "server": "ui-production-8f3e.up.railway.app",
+  "port": 80,
+  "uuid": "b8d4c1c7-5b7e-4a8f-9d0b-1f3e8c5a7d22",
+  "network": "ws",
+  "path": "/proxy",
+  "host": "www.speedtest.net",
+  "tls": false
 }
