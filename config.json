@@ -5,7 +5,7 @@
 
   "inbounds": [
     {
-      "tag": "vless-xhttp",
+      "tag": "vless-ws",
       "listen": "0.0.0.0",
       "port": 8080,
       "protocol": "vless",
@@ -20,12 +20,14 @@
       },
 
       "streamSettings": {
-        "network": "xhttp",
+        "network": "ws",
         "security": "none",
 
-        "xhttpSettings": {
+        "wsSettings": {
           "path": "/proxy",
-          "host": "www.speedtest.net"
+          "headers": {
+            "Host": "www.speedtest.net"
+          }
         }
       }
     }
