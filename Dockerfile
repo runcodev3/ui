@@ -9,4 +9,6 @@ RUN curl -L https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linu
 
 COPY config.json /config.json
 
+EXPOSE 8080
+
 CMD ["xray","run","-c","/config.json"]
