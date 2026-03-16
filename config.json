@@ -1,10 +1,44 @@
 {
-  "protocol": "vless",
-  "server": "ui-production-8f3e.up.railway.app",
-  "port": 80,
-  "uuid": "b8d4c1c7-5b7e-4a8f-9d0b-1f3e8c5a7d22",
-  "network": "ws",
-  "path": "/proxy",
-  "host": "www.speedtest.net",
-  "tls": false
+  "log": {
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "port": 10808,
+      "listen": "0.0.0.0",
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth"
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "ui-production-8f3e.up.railway.app",
+            "port": 443,
+            "users": [
+              {
+                "id": "b8d4c1c7-5b7e-4a8f-9d0b-1f3e8c5a7d22",
+                "encryption": "none"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "wsSettings": {
+          "path": "/proxy",
+          "headers": {
+            "Host": "www.speedtest.net"
+          }
+        }
+      }
+    }
+  ]
 }
