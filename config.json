@@ -18,7 +18,10 @@
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/proxy"
+          "path": "/proxy",
+          "headers": {
+            "Host": "www.speedtest.net"
+          }
         }
       }
     }
